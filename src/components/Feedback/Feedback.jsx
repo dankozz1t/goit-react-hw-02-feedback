@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Statistics from 'components/Statistics';
 import FeedbackOption from 'components/FeedbackOption';
 import Notification from 'components/Notification';
+import Section from 'components/Section';
+
 import s from './Feedback.module.css';
 
 export default class Feedback extends Component {
@@ -37,22 +39,26 @@ export default class Feedback extends Component {
 
     return (
       <div className={s.box}>
-        <FeedbackOption
-          options={this.BUTTONS}
-          onLeaveFeedback={this.onLeaveFeedback}
-        />
-
-        {total ? (
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={total}
-            positivePercentage={positivePercentage}
+        <Section title="Please leave feedback">
+          <FeedbackOption
+            options={this.BUTTONS}
+            onLeaveFeedback={this.onLeaveFeedback}
           />
-        ) : (
-          <Notification message="There is no feedback" />
-        )}
+        </Section>
+
+        <Section title="Statistics">
+          {total ? (
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={positivePercentage}
+            />
+          ) : (
+            <Notification message="There is no feedback" />
+          )}
+        </Section>
       </div>
     );
   }
