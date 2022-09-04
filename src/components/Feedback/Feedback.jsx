@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Statistics from 'components/Statistics';
 import FeedbackOption from 'components/FeedbackOption';
 import Notification from 'components/Notification';
