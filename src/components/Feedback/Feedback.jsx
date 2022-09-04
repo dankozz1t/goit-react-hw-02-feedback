@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Statistics from 'components/Statistics';
 import FeedbackOption from 'components/FeedbackOption';
 import Notification from 'components/Notification';
+import s from './Feedback.module.css';
 
 export default class Feedback extends Component {
   BUTTONS = ['good', 'neutral', 'bad'];
@@ -35,7 +36,7 @@ export default class Feedback extends Component {
     const positivePercentage = this.countPositiveFeedbackPercentage();
 
     return (
-      <div>
+      <div className={s.box}>
         <FeedbackOption
           options={this.BUTTONS}
           onLeaveFeedback={this.onLeaveFeedback}

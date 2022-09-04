@@ -1,9 +1,12 @@
+import Container from './Container/Container';
 import Feedback from './Feedback';
 
 export const App = () => {
   return (
     <div>
-      <Feedback />
+      <Container>
+        <Feedback />
+      </Container>
     </div>
   );
 };
