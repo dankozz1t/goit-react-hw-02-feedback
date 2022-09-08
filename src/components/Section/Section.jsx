@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import s from './Section.module.css';
 
 export default class Section extends Component {
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+  };
+
   render() {
     return (
       <div>
@@ -12,7 +16,3 @@ export default class Section extends Component {
     );
   }
 }
-
-Section.propTypes = {
-  title: PropTypes.string.isRequired,
-};
