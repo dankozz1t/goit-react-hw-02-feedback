@@ -7,8 +7,6 @@ import Section from 'components/Section';
 import s from './Feedback.module.css';
 
 export default class Feedback extends Component {
-  BUTTONS = ['good', 'neutral', 'bad'];
-
   state = {
     good: 0,
     neutral: 0,
@@ -41,7 +39,7 @@ export default class Feedback extends Component {
       <div className={s.box}>
         <Section title="Please leave feedback">
           <FeedbackOption
-            options={this.BUTTONS}
+            options={Object.keys(this.state)}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
